@@ -10,7 +10,7 @@ on any pin.
 
 On the ESP32, this sensor is even highly accurate because it's using the hardware `pulse counter
 peripheral <https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/pcnt.html>`__
-on the ESP32.
+on the ESP32. However, due to the use of the pulse counter peripheral, a maximum of 8 channels can be used! 
 
 .. figure:: images/pulse-counter.png
     :align: center
@@ -42,7 +42,7 @@ Configuration variables:
 - **internal_filter** (*Optional*, :ref:`config-time`): If a pulse shorter than this
   time is detected, it’s discarded and no pulse is counted. Defaults to ``13us``. On the ESP32,
   this value can not be higher than ``13us``, for the ESP8266 you can use larger intervals too.
-  If you enable this, set up the ``count_mode`` to increase on the falling edge, not leading edge.
+  If you enable this, set up the ``count_mode`` to increase on the falling edge, not leading edge. For S0 pulse meters that are used to meter power consumption 50-100 ms is a reasonable value.
 
 - **update_interval** (*Optional*, :ref:`config-time`): The interval to check the sensor. Defaults to ``60s``.
 

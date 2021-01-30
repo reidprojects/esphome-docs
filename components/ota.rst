@@ -7,7 +7,7 @@ OTA Update Component
     :keywords: Xiaomi, Mi Flora, BLE, Bluetooth
 
 With the OTA (Over The Air) update component you can upload your
-firmware binaries to your node without having to use an USB cable for
+firmware binaries to your node without having to use a USB cable for
 uploads. ESPHome natively supports this through its ``run`` and
 ``upload`` helper scripts.
 
@@ -55,10 +55,10 @@ through an ``on_boot`` trigger:
     esphome:
       on_boot:
         - lambda: |-
-            id(ota).set_auth_password("New password");
+            id(my_ota).set_auth_password("New password");
     ota:
       password: "Old password"
-      id: ota
+      id: my_ota
 
 See Also
 --------
